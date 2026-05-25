@@ -133,7 +133,7 @@ export const clerkWebhooks = async (req, res) => {
         await User.findByIdAndUpdate(
           data.id,
           userData,
-          { new: true }
+          { upsert: true, new: true }
         );
 
         console.log("User updated");
